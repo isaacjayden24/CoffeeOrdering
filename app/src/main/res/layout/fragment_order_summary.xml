@@ -81,15 +81,37 @@ android:layout_height="match_parent">
                     android:textAppearance="?attr/textAppearanceSubtitle1" />
 
                 <TextView
+                    android:id="@+id/firstNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textColor="#313131"
                     android:textSize="14sp"
-                    android:text="Jl. Kpg Sutoyo"
+                    android:text="First Name"
                     android:textAppearance="?attr/textAppearanceBody1" />
 
                 <TextView
+                    android:id="@+id/lastNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#313131"
+                    android:textSize="14sp"
+                    android:text="Last Name"
+                    android:textAppearance="?attr/textAppearanceBody1" />
+
+                <TextView
+                    android:id="@+id/cityTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="#313131"
+                    android:textSize="14sp"
+                    android:text="City Name"
+                    android:textAppearance="?attr/textAppearanceBody1" />
+
+                <TextView
+                    android:id="@+id/addressTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai."
@@ -103,6 +125,7 @@ android:layout_height="match_parent">
                     android:orientation="horizontal">
 
                     <com.google.android.material.button.MaterialButton
+                        android:id="@+id/editAddressBtn"
                         style="?attr/materialButtonOutlinedStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

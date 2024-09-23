@@ -44,7 +44,11 @@
         android:id="@+id/billingFragment"
         android:name="com.example.coffeeordering.BillingFragment"
         android:label="fragment_billing"
-        tools:layout="@layout/fragment_billing" />
+        tools:layout="@layout/fragment_billing" >
+        <action
+            android:id="@+id/action_billingFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/deliveryMapFragment"
         android:name="com.example.coffeeordering.DeliveryMapFragment"

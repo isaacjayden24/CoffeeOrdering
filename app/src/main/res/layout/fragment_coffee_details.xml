@@ -40,6 +40,7 @@
                 app:cardElevation="4dp">
 
                 <ImageView
+                    android:id="@+id/coffeeImageView"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
@@ -48,6 +49,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
+                android:id="@+id/coffeeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -182,6 +184,7 @@
                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/buyNowBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"

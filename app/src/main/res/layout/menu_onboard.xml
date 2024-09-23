@@ -94,12 +94,14 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/caffeMochaImage"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/coffee_recyler1" />
 
                     <TextView
+                        android:id="@+id/caffeMochaName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Caffe Mocha"
@@ -117,12 +119,14 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/caffeMochaPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$4.53"
                             android:textStyle="bold" />
 
                         <Button
+                            android:id="@+id/caffeMochaBtn"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"
@@ -148,12 +152,14 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/flatWhiteImage"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/flat_white" />
 
                     <TextView
+                        android:id="@+id/flatWhiteName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Flat White"
@@ -171,12 +177,14 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/flatWhitePrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$4.79"
                             android:textStyle="bold" />
 
                         <Button
+                            android:id="@+id/flatWhiteBtn"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"

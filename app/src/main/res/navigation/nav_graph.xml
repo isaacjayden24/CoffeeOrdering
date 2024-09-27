@@ -39,6 +39,9 @@
         <action
             android:id="@+id/action_orderSummaryFragment_to_billingFragment"
             app:destination="@id/billingFragment" />
+        <action
+            android:id="@+id/action_orderSummaryFragment_to_deliveryMapFragment"
+            app:destination="@id/deliveryMapFragment" />
     </fragment>
     <fragment
         android:id="@+id/billingFragment"

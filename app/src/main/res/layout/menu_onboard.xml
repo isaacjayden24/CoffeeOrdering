@@ -52,6 +52,7 @@
                     android:textColor="#FFFFFF" />
 
                 <Button
+                    android:id="@+id/machiatoBtnNavigation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Machiato"
@@ -59,16 +60,34 @@
                     android:textColor="#000000" />
 
                 <Button
+                    android:id="@+id/flatWhiteBtnNavigation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Latte"
+                    android:text="Flat white"
                     android:backgroundTint="#F1F1F1"
                     android:textColor="#000000" />
 
                 <Button
+                    android:id="@+id/americanoBtnNavigation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Americ"
+                    android:text="Americano"
+                    android:backgroundTint="#F1F1F1"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/caffeeMochaBtnNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Caffee Mocha"
+                    android:backgroundTint="#F1F1F1"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/capuccinoBtnNavigation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Capuccino"
                     android:backgroundTint="#F1F1F1"
                     android:textColor="#000000" />
 
@@ -210,12 +229,14 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/americanoMistroImage"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/americano_misto" />
 
                     <TextView
+                        android:id="@+id/americanoMistroName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Americano misto"
@@ -233,12 +254,14 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/americanoMistroPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$3.53"
                             android:textStyle="bold" />
 
                         <Button
+                            android:id="@+id/americanoMistroBtn"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"
@@ -266,12 +289,14 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/capuccinoImage"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/capuccino" />
 
                     <TextView
+                        android:id="@+id/capuccinoName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Capuccino"
@@ -289,12 +314,14 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/capuccinoPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$5.00"
                             android:textStyle="bold" />
 
                         <Button
+                            android:id="@+id/capuccinoBtn"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"
@@ -319,12 +346,14 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/macchiatoImage"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/capuccino" />
+                        android:src="@drawable/macchiato" />
 
                     <TextView
+                        android:id="@+id/macchiatoName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Macchiato"
@@ -342,12 +371,14 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/macchiatoPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="$3.96"
                             android:textStyle="bold" />
 
                         <Button
+                            android:id="@+id/macchiatoBtn"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_marginStart="8dp"

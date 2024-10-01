@@ -1,12 +1,9 @@
-package com.example.coffeeordering
+package com.project.coffeeordering
 
 //import com.example.coffeeordering.databinding.ActivityMainBinding
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.setupActionBarWithNavController
 
 
 class MainActivity : AppCompatActivity() {

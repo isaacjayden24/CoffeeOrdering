@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.coffeeordering.LoginFragment"
+        android:name="com.project.coffeeordering.LoginFragment"
         android:label="login_onboard"
         tools:layout="@layout/login_onboard" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/coffeeDetailsFragment"
-        android:name="com.example.coffeeordering.CoffeeDetailsFragment"
+        android:name="com.project.coffeeordering.CoffeeDetailsFragment"
         android:label="fragment_coffee_details"
         tools:layout="@layout/fragment_coffee_details" >
         <action
@@ -24,16 +24,19 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.coffeeordering.MenuFragment"
+        android:name="com.project.coffeeordering.MenuFragment"
         android:label="menu_onboard"
         tools:layout="@layout/menu_onboard" >
         <action
             android:id="@+id/action_menuFragment_to_coffeeDetailsFragment"
             app:destination="@id/coffeeDetailsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_coffeeButtonFragment"
+            app:destination="@id/coffeeButtonFragment" />
     </fragment>
     <fragment
         android:id="@+id/orderSummaryFragment"
-        android:name="com.example.coffeeordering.OrderSummaryFragment"
+        android:name="com.project.coffeeordering.OrderSummaryFragment"
         android:label="fragment_order_summary"
         tools:layout="@layout/fragment_order_summary" >
         <action
@@ -45,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/billingFragment"
-        android:name="com.example.coffeeordering.BillingFragment"
+        android:name="com.project.coffeeordering.BillingFragment"
         android:label="fragment_billing"
         tools:layout="@layout/fragment_billing" >
         <action
@@ -54,7 +57,16 @@
     </fragment>
     <fragment
         android:id="@+id/deliveryMapFragment"
-        android:name="com.example.coffeeordering.DeliveryMapFragment"
+        android:name="com.project.coffeeordering.DeliveryMapFragment"
         android:label="fragment_delivery_map"
         tools:layout="@layout/fragment_delivery_map" />
+    <fragment
+        android:id="@+id/coffeeButtonFragment"
+        android:name="com.project.coffeeordering.CoffeeButtonFragment"
+        android:label="fragment_coffee_button"
+        tools:layout="@layout/fragment_coffee_button" >
+        <action
+            android:id="@+id/action_coffeeButtonFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
 </navigation>

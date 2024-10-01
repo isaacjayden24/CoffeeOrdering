@@ -1,17 +1,17 @@
-package com.example.coffeeordering
+package com.project.coffeeordering
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.coffeeordering.model.StorageViewModel
+import com.project.coffeeordering.model.StorageViewModel
 
 
 class MenuFragment : Fragment() {
@@ -100,10 +100,10 @@ class MenuFragment : Fragment() {
         ////////////////////////////////////////////////////////////////////////////////////////////
         //handle top bar horizontal navigation buttons
 
-        machiatoBtnNavigation.setOnClickListener(){
+         machiatoBtnNavigation.setOnClickListener(){
 
             val selectedCoffee = getCoffeeName(macchiatoName)
-            handleCoffeeSelection(selectedCoffee)
+            handleCoffeeSelectionButton(selectedCoffee)
 
             val selectedImageRes = R.drawable.macchiato
             storageViewModel.setImage(selectedImageRes)
@@ -113,7 +113,7 @@ class MenuFragment : Fragment() {
 
         flatWhiteBtnNavigation.setOnClickListener(){
             val selectedCoffee = getCoffeeName(flatWhiteName)
-            handleCoffeeSelection(selectedCoffee)
+            handleCoffeeSelectionButton(selectedCoffee)
 
             val selectedImageRes = R.drawable.flat_white
             storageViewModel.setImage(selectedImageRes)
@@ -125,7 +125,7 @@ class MenuFragment : Fragment() {
         americanoBtnNavigation.setOnClickListener(){
 
             val selectedCoffee = getCoffeeName(americanoMistroName)
-            handleCoffeeSelection(selectedCoffee)
+            handleCoffeeSelectionButton(selectedCoffee)
 
             val selectedImageRes = R.drawable.americano_misto // Example image resource
             storageViewModel.setImage(selectedImageRes)
@@ -138,7 +138,7 @@ class MenuFragment : Fragment() {
         caffeeMochaBtnNavigation.setOnClickListener(){
 
             val selectedCoffee = getCoffeeName(caffeeMochaName)
-            handleCoffeeSelection(selectedCoffee)
+            handleCoffeeSelectionButton(selectedCoffee)
 
             val selectedImageRes = R.drawable.coffee_recyler1
             storageViewModel.setImage(selectedImageRes)
@@ -151,7 +151,7 @@ class MenuFragment : Fragment() {
         capuccinoBtnNavigation.setOnClickListener(){
 
             val selectedCoffee = getCoffeeName(capuccinoName)
-            handleCoffeeSelection(selectedCoffee)
+            handleCoffeeSelectionButton(selectedCoffee)
 
             val selectedImageRes = R.drawable.capuccino
             storageViewModel.setImage(selectedImageRes)
@@ -272,6 +272,8 @@ class MenuFragment : Fragment() {
 
         return coffeeName.text.toString()
     }
+
+
     //load coffee name to the view model
     private fun handleCoffeeSelection(selectedCoffee:String){
 
@@ -308,6 +310,22 @@ class MenuFragment : Fragment() {
        if (description != null) {
            storageViewModel.displayCoffeeDescription(description)
        }
+
+
+    }
+
+
+
+    //
+    private fun handleCoffeeSelectionButton(selectedCoffee:String){
+
+
+        storageViewModel.updateCoffeeName(selectedCoffee)
+        //clear the price before navigating
+        storageViewModel.priceIncrement.value=null
+
+        findNavController().navigate(R.id.action_menuFragment_to_coffeeButtonFragment)
+
 
 
     }

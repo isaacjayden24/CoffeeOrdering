@@ -1,4 +1,4 @@
-package com.example.coffeeordering
+package com.project.coffeeordering
 
 import org.junit.Test
 

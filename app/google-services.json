@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "195240101957",
+    "project_id": "coffeeordering-4dc50",
+    "storage_bucket": "coffeeordering-4dc50.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:195240101957:android:f637fc5a0c4a27a22fbb2c",
+        "android_client_info": {
+          "package_name": "com.project.coffeeordering"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX1LgOvqvb5NqPXC2X2irg-4OdjJgpG2M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

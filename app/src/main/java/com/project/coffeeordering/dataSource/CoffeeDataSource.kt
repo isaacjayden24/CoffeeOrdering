@@ -1,4 +1,4 @@
-package com.example.coffeeordering.dataSource
+package com.project.coffeeordering.dataSource
 
 class CoffeeDataSource {
 

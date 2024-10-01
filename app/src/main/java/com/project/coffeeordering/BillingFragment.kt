@@ -1,4 +1,4 @@
-package com.example.coffeeordering
+package com.project.coffeeordering
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,8 +10,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.coffeeordering.data.CheckoutDetails
-import com.example.coffeeordering.model.StorageViewModel
+import com.project.coffeeordering.data.CheckoutDetails
+import com.project.coffeeordering.model.StorageViewModel
 
 
 /**

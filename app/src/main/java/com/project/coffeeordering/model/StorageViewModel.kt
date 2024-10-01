@@ -1,11 +1,11 @@
-package com.example.coffeeordering.model
+package com.project.coffeeordering.model
 
 import android.content.ClipDescription
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.coffeeordering.data.CheckoutDetails
-import com.example.coffeeordering.dataSource.CoffeeDataSource
+import com.project.coffeeordering.data.CheckoutDetails
+import com.project.coffeeordering.dataSource.CoffeeDataSource
 
 
 class StorageViewModel: ViewModel() {
@@ -40,7 +40,7 @@ class StorageViewModel: ViewModel() {
 
     // live data for price increment {the actual price of the coffee}
     private val  _priceIncrement=MutableLiveData<Double>()
-    val priceIncrement:LiveData<Double> get() = _priceIncrement
+    val priceIncrement:MutableLiveData<Double> get() = _priceIncrement
 
     //live data for price decrement
     /*private val _priceDecrement=MutableLiveData<Double>()

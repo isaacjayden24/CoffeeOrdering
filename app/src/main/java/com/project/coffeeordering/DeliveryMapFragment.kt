@@ -1,4 +1,4 @@
-package com.example.coffeeordering
+package com.project.coffeeordering
 
 import android.content.Intent
 import android.net.Uri

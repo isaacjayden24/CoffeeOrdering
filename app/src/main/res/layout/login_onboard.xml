@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context="com.project.coffeeordering.LoginFragment">
 
     <!-- Add ScrollView to make the content scrollable -->
     <ScrollView

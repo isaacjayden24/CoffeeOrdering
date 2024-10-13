@@ -2,17 +2,6 @@
 
 Coffee ordering is an Android application built using kotlin to assist users to order and select various types of coffee. I used this project to help me in learning concepts in Android.
 
-
-## Libraries and technologies used
-
-
-```
-
-Kotlin
-ViewModel
-Firebase:Used it for user Authentication
-
-
 ## ScreenShots(Dark Mode)
 <img src="Docs/screenshots/Start.png" width="300px">
 
@@ -29,5 +18,16 @@ Firebase:Used it for user Authentication
 <img src="Docs/screenshots/Delivery.png" width="300px">
 
 <img src="Docs/screenshots/final.png" width="300px">
+## Libraries and technologies used
+
+
+```
+
+Kotlin
+ViewModel
+Firebase:Used it for user Authentication
+
+
+
 
 

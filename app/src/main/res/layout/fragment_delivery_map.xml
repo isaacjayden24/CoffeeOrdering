@@ -144,7 +144,19 @@
 
         </LinearLayout>
 
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/orderButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Order"
+            android:backgroundTint="#C67C4E"
+            app:cornerRadius="8dp" />
+
     </LinearLayout>
+
+
 
 </androidx.core.widget.NestedScrollView>
 

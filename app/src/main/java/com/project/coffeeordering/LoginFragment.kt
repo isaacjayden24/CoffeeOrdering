@@ -28,7 +28,8 @@ class LoginFragment : Fragment() {
 
 
         getStartedBtn.setOnClickListener(){
-            findNavController().navigate(R.id.action_loginFragment_to_menuFragment)
+           // findNavController().navigate(R.id.action_loginFragment_to_menuFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
 

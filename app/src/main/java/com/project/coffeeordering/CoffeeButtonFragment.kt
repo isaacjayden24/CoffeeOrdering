@@ -8,6 +8,9 @@ import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -40,8 +43,11 @@ class CoffeeButtonFragment : Fragment() {
 
 
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        retainInstance = true
 
     }
 
@@ -51,6 +57,21 @@ class CoffeeButtonFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_coffee_button, container, false)
+
+
+        // Set up toolbar
+        val toolbar = view.findViewById<Toolbar>(R.id.toolbar)
+        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+
+        // Enable back button in the toolbar
+        (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // Handle the navigation icon click
+        toolbar.setNavigationOnClickListener {
+            findNavController().popBackStack() // Go back to the previous fragment
+        }
+
+
         coffeeImageViewButton=view.findViewById(R.id.coffeeImageViewButton)
         coffeeNameButton=view.findViewById(R.id.coffeeNameButton)
         coffeeDescriptionTextViewButton=view.findViewById(R.id.coffeeDescriptionTextViewButton)
@@ -64,7 +85,7 @@ class CoffeeButtonFragment : Fragment() {
         // TODO: handle the logic of the increase button on coffee button based on the image resource and observe live data also implement the firebase authentication
         //button to increase on prices
         priceIncreaseBtn.setOnClickListener(){
-
+             handlePriceIcrement()
         }
 
 
@@ -131,5 +152,37 @@ class CoffeeButtonFragment : Fragment() {
         }
     }
 
+
+    private fun handlePriceIcrement(){
+        val currentImageResource=getCurrentImageResource()
+
+        val price=when(currentImageResource){
+
+            R.drawable.coffee_recyler1->4.53
+            R.drawable.flat_white->4.79
+            R.drawable.americano_misto->3.53
+            R.drawable.capuccino->5.0
+            R.drawable.macchiato->3.96
+            else->0.0
+
+        }
+
+
+        //update the price to the view model
+        storageViewModel.incrementPriceCoffeeButtonFragment(price)
+    }
+
+    private fun getCurrentImageResource(): Int {
+        val drawable = coffeeImageViewButton.drawable?.constantState ?: return 0
+
+        return when(drawable){
+            ContextCompat.getDrawable(requireContext(), R.drawable.coffee_recyler1)?.constantState -> R.drawable.coffee_recyler1
+            ContextCompat.getDrawable(requireContext(), R.drawable.flat_white)?.constantState -> R.drawable.flat_white
+            ContextCompat.getDrawable(requireContext(), R.drawable.americano_misto)?.constantState -> R.drawable.americano_misto
+            ContextCompat.getDrawable(requireContext(), R.drawable.capuccino)?.constantState -> R.drawable.capuccino
+            ContextCompat.getDrawable(requireContext(), R.drawable.macchiato)?.constantState -> R.drawable.macchiato
+            else -> 0
+        }
+    }
 
 }

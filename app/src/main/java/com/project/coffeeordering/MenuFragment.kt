@@ -322,7 +322,7 @@ class MenuFragment : Fragment() {
 
         storageViewModel.updateCoffeeName(selectedCoffee)
         //clear the price before navigating
-        storageViewModel.priceIncrement.value=null
+        storageViewModel.priceIncrement.value =0.0
 
         findNavController().navigate(R.id.action_menuFragment_to_coffeeButtonFragment)
 

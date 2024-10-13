@@ -1,5 +1,6 @@
 package com.project.coffeeordering
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -21,6 +23,8 @@ import com.project.coffeeordering.model.StorageViewModel
  * create an instance of this fragment.
  */
 class OrderSummaryFragment : Fragment() {
+
+
 
     private val storageViewModel: StorageViewModel by activityViewModels()
     private lateinit var firstName:TextView
@@ -85,7 +89,8 @@ class OrderSummaryFragment : Fragment() {
             findNavController().navigate(R.id.action_orderSummaryFragment_to_billingFragment)
         }
         orderBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_orderSummaryFragment_to_deliveryMapFragment)
+             prepareEmailBody()
+             findNavController().navigate(R.id.action_orderSummaryFragment_to_deliveryMapFragment)
         }
 
         storageViewModel.checkoutDetails.observe(viewLifecycleOwner) { details ->
@@ -118,6 +123,47 @@ class OrderSummaryFragment : Fragment() {
 
 
         return view
+    }
+
+   /* private fun sendOrderDetailsViaEmail() {
+        val subject = "Order Summary"
+        val body = """
+            First Name: ${firstName.text}
+            Last Name: ${lastName.text}
+            City: ${cityName.text}
+            Address: ${addressName.text}
+            Coffee Ordered: ${coffeeName.text}
+            Quantity: ${quantityOrderTextView.text}
+            Total Price: ${orderTextView.text}
+        """.trimIndent()
+
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "message/rfc822" // This ensures the user is prompted with email apps only
+            putExtra(Intent.EXTRA_EMAIL, arrayOf("recipient@example.com")) // Replace with the email address
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body)
+        }
+
+        try {
+            startActivity(Intent.createChooser(intent, "Send email using..."))
+        } catch (ex: android.content.ActivityNotFoundException) {
+            Toast.makeText(requireContext(), "No email client installed.", Toast.LENGTH_SHORT).show()
+        }
+    }*/
+
+    private fun prepareEmailBody() {
+        val body = """
+            First Name: ${firstName.text}
+            Last Name: ${lastName.text}
+            City: ${cityName.text}
+            Address: ${addressName.text}
+            Coffee Ordered: ${coffeeName.text}
+            Quantity: ${quantityOrderTextView.text}
+            Total Price: ${orderTextView.text}
+        """.trimIndent()
+
+        // Store the email body in the SharedViewModel
+        storageViewModel.setEmailBody(body)
     }
 
 

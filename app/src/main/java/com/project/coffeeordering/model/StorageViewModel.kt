@@ -16,6 +16,10 @@ class StorageViewModel: ViewModel() {
     //the price to reset the coffee after selected
     val coffeeBasePrice=0.0
 
+    //live data for email description
+    private val _emailBody = MutableLiveData<String>()
+    val emailBody: LiveData<String> get() = _emailBody
+
     //live data for the description
     private val _coffeeDescription=MutableLiveData<String>()
     val coffeeDescription:LiveData<String> get()=_coffeeDescription
@@ -47,7 +51,7 @@ class StorageViewModel: ViewModel() {
     val priceDecrement:LiveData<Double> get() =_priceDecrement*/
 
     init {
-        _priceIncrement.value=0.0
+        _priceIncrement.value =0.0
         _quantityAmount.value=0
     }
 
@@ -85,6 +89,13 @@ class StorageViewModel: ViewModel() {
     //function to increase price on coffee
     fun incrementPrice(newIcreasedPrice:Double){
         _priceIncrement.value=newIcreasedPrice
+
+
+    }
+
+    fun incrementPriceCoffeeButtonFragment(newIcreasedPrice:Double){
+        val currentPrice = _priceIncrement.value ?: 0.0
+        _priceIncrement.value = currentPrice + newIcreasedPrice
     }
 
 
@@ -111,6 +122,11 @@ class StorageViewModel: ViewModel() {
 
     fun resetPriceToBase(){
         _priceIncrement.value=coffeeBasePrice
+    }
+
+    // Function to update email body
+    fun setEmailBody(body: String) {
+        _emailBody.value = body
     }
 
 

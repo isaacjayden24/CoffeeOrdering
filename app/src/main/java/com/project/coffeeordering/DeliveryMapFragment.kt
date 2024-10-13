@@ -6,23 +6,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.google.android.material.imageview.ShapeableImageView
 import com.google.android.material.progressindicator.LinearProgressIndicator
+import com.project.coffeeordering.model.StorageViewModel
 
 
 class DeliveryMapFragment : Fragment() {
 
 
-    private lateinit var progressBar: LinearProgressIndicator
+    //declare the view model
+    private val storageViewModel: StorageViewModel by activityViewModels()
+
+     private lateinit var progressBar: LinearProgressIndicator
     private lateinit var timeLeftTextView: TextView
     private lateinit var addressTextView: TextView
     private lateinit var courierNameTextView: TextView
     private lateinit var courierTitleTextView: TextView
     private lateinit var courierImageView: ShapeableImageView
     private lateinit var callCourierButton: ImageButton
+    private lateinit var orderBtn:Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,6 +47,7 @@ class DeliveryMapFragment : Fragment() {
         courierTitleTextView = view.findViewById(R.id.courierTitle)
         courierImageView = view.findViewById(R.id.courierImage)
         callCourierButton = view.findViewById(R.id.callCourierButton)
+        orderBtn=view.findViewById(R.id.orderButton)
 
 
 
@@ -54,6 +63,17 @@ class DeliveryMapFragment : Fragment() {
             // Logic to call the courier (launch dialer with number)
             callCourier()
         }
+        //send the order to email by observing the live data first
+        storageViewModel.emailBody.observe(viewLifecycleOwner) { emailBody ->
+
+
+            // Enable the button click listener to send the order
+            orderBtn.setOnClickListener {
+                sendOrderDetailsViaEmail(emailBody)
+            }
+        }
+
+
 
         return view
     }
@@ -86,4 +106,25 @@ class DeliveryMapFragment : Fragment() {
         intent.data = Uri.parse(phoneNumber)
         startActivity(intent)
     }
+
+   //function to send the order
+    private fun sendOrderDetailsViaEmail(body: String) {
+        val subject = "Order Summary"
+
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            type = "message/rfc822" // Only show email apps
+            putExtra(Intent.EXTRA_EMAIL, arrayOf("recipient@example.com")) // Replace with recipient email
+            putExtra(Intent.EXTRA_SUBJECT, subject)
+            putExtra(Intent.EXTRA_TEXT, body) // Use the email body from ViewModel
+        }
+
+        try {
+            startActivity(Intent.createChooser(intent, "Send email using..."))
+        } catch (ex: android.content.ActivityNotFoundException) {
+            Toast.makeText(requireContext(), "No email client installed.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+
 }
+

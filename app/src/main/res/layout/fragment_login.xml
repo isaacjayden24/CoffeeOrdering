@@ -41,9 +41,10 @@ tools:context=".loginsignup.LoginFragment">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:hint="username">
+        android:hint="Email">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/usernameTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:errorEnabled="true"
@@ -58,11 +59,18 @@ tools:context=".loginsignup.LoginFragment">
         android:hint="password">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_edit_text"
+            android:id="@+id/passwordTextInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:hint="Confirm password"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -74,10 +82,10 @@ tools:context=".loginsignup.LoginFragment">
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:backgroundTint="@color/brown"
-            android:text="next" />
+            android:text="Login" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/signup_button"
+            android:id="@+id/cancel_button"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -87,10 +95,19 @@ tools:context=".loginsignup.LoginFragment">
             android:layout_toStartOf="@id/next_button"
             android:text="cancel" />
 
+
+
     </RelativeLayout>
 
 
+
+
+
+
 </LinearLayout>
+
+
+
 
 
 </ScrollView>
